@@ -1,0 +1,23 @@
+<h1>Users Social Media in the world</h1>
+
+<div *ngIf="doughnutChartData.length === 0; else divGraphics" 
+    class="alert alert-info">
+    Loading data
+</div>
+
+<div class="row">
+    <div class="col">
+
+        <ng-template #divGraphics>
+            <div style="display: block">
+            <canvas baseChart
+                [data]="doughnutChartData"
+                [labels]="doughnutChartLabels"
+                [chartType]="doughnutChartType">
+            </canvas>
+            </div>
+        </ng-template>
+
+        <span class="float-end mt-3">Information in billions users</span>
+    </div>
+</div>
